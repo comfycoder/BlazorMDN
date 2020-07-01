@@ -1,6 +1,10 @@
 # BlazorMDN
 Sample Blazor Apps For MADdotNET
 
+## Blazor.NET Presentation
+
+https://bit.ly/2ZwbqAr
+
 
 <h2>Blazor Resources</h2>
 
