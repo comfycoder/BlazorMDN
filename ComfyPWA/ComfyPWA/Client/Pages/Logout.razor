@@ -1,0 +1,18 @@
+﻿@page "/logout"
+@inject IAuthService authService
+@inject NavigationManager Navigation
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Logout" Author="Dennis Moon" RobotsFollow="false"
+          Keywords="blazor, pwa, component, logout"
+          Description="Log out of the applications">
+</PageMeta>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await authService.Logout();
+        Navigation.NavigateTo("/");
+    }
+
+}

@@ -1,0 +1,15 @@
+﻿@page "/claims"
+
+<h3>Security Claims</h3>
+
+<p>@authMessage</p>
+
+@if (claims.Count() > 0)
+{
+    <ul>
+        @foreach (var claim in claims)
+        {
+            <li class="dont-break-out">@claim.Type: @claim.Value</li>
+        }
+    </ul>
+}

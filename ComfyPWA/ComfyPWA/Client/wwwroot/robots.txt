@@ -1,0 +1,11 @@
+﻿# Crawlers Setup
+User-agent: *
+
+# Paths (clean URLs)
+User-agent: *
+Disallow: /login
+Disallow: /logout
+Disallow: /register
+Disallow: /errordemo
+
+Host: https://as-cc-comfypwa.azurewebsites.net/

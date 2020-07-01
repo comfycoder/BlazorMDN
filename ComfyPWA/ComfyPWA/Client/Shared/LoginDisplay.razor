@@ -1,0 +1,43 @@
+﻿@using System.Security.Claims
+
+<AuthorizeView>
+    <Authorized>
+        <li class="nav-item">
+            <div class="navbar-text text-white">
+                Hello @fullname! @*(@context.User.Identity.Name)*@
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="LogOut">Log out</a>
+        </li>
+    </Authorized>
+    <NotAuthorized>
+        <li class="nav-item">
+            <a class="nav-link active" href="Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="Login">Log in</a>
+        </li>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code
+{
+    string fullname = string.Empty;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            var identity = (ClaimsIdentity)user.Identity;
+            fullname = identity.FindFirst("FullName")?.Value;
+        }
+    }
+}
+

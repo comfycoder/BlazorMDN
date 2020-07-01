@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UserSecretsId>ComfyPWA.Server-CEEF22FF-12A2-4AAF-B05A-CA62C7C1638E</UserSecretsId>
+		<!-- ====================================================================== -->
+		<!-- Added for Swagger XML comments -->
+		<!-- ====================================================================== -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+		<!-- ====================================================================== -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Client\ComfyPWA.Client.csproj" />
+		<ProjectReference Include="..\Shared\ComfyPWA.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- ====================================================================== -->
+		<!-- Added for Custom Authentication -->
+		<!-- ====================================================================== -->
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="3.1.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<!-- ====================================================================== -->
+		<!-- Added for Swagger -->
+		<!-- https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle -->
+		<!-- ====================================================================== -->
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+		<!-- ====================================================================== -->
+	</ItemGroup>
+
+</Project>

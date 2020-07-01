@@ -1,0 +1,24 @@
+﻿@page "/dashboard"
+@using BlazingDataStore.Models
+
+<h3>Star Wars People</h3>
+
+@if (people == null || people.Count() == 0)
+{
+    <p>Loading Star Wars People...</p>
+}
+else
+{
+    <ul>
+        @foreach (Person person in people)
+        {
+            <li>
+                @person?.Name
+            </li>
+        }
+    </ul>
+
+    <button class="btn btn-primary" @onclick="Previous" disabled="@hasPrevious">Previous</button>
+
+    <button class="btn btn-primary" @onclick="Next" disabled="@hasNext">Next</button>
+}

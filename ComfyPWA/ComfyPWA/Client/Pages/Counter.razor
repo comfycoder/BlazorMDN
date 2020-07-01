@@ -1,0 +1,14 @@
+﻿@page "/counter"
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Component State" Author="Dennis Moon" RobotsFollow="true"
+          Keywords="blazor, pwa, component, data, state"
+          Description="Learn how to change values and persist state between sessions in a Blazor component">
+</PageMeta>
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary mr-2 mb-2" @onclick="IncrementCountAsync">Increment Count</button>
+<button class="btn btn-primary mr-2 mb-2" @onclick="DecrementCountAsync">Decrement Count</button>
+<button class="btn btn-primary mr-2 mb-2" @onclick="ResetCountAsync">Reset Count</button>

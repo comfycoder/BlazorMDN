@@ -1,0 +1,64 @@
+﻿@page "/login"
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Login" Author="Dennis Moon" RobotsFollow="false"
+          Keywords="blazor, pwa, component, login"
+          Description="Log into the application to gain access to secured pages">
+</PageMeta>
+
+<h1>Login</h1>
+
+@if (showErrors)
+{
+    <div class="alert alert-danger" role="alert">
+        <p>@error</p>
+    </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Please enter your details</h5>
+        <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="mb-3">
+                <label class="form-label" for="email">Email address</label>
+                <InputText Id="email" Class="form-control" @bind-Value="loginModel.Email" />
+                <ValidationMessage For="@(() => loginModel.Email)" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <InputText Id="password" type="password" Class="form-control" @bind-Value="loginModel.Password" />
+                <ValidationMessage For="@(() => loginModel.Password)" />
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+
+    private readonly LoginModel loginModel = new LoginModel();
+    private bool showErrors;
+    private string error = "";
+
+    private async Task HandleLogin()
+    {
+        showErrors = false;
+
+        var result = await AuthService.Login(loginModel);
+        if (result.Successful)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            error = result.Error;
+            showErrors = true;
+        }
+    }
+
+}

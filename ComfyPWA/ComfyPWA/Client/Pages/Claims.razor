@@ -1,0 +1,20 @@
+﻿@page "/claims"
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Security Claims" Author="Dennis Moon" RobotsFollow="true"
+          Keywords="blazor, pwa, security, claims"
+          Description="Learn how to ccess your security claims in a Blazor component">
+</PageMeta>
+
+<h3>Security Claims</h3>
+
+<p>@authMessage</p>
+
+@if (claims.Count() > 0)
+{
+    <ul>
+        @foreach (var claim in claims)
+        {
+            <li class="dont-break-out">@claim.Type: @claim.Value</li>
+        }
+    </ul>
+}

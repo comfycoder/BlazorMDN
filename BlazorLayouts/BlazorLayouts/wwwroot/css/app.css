@@ -1,0 +1,126 @@
+﻿html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+app {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    width: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+    margin: 0;
+}
+
+.main {
+    margin: 0 10px;
+}
+
+.page-footer {
+    flex-shrink: 0;
+}
+
+footer {
+    margin: 10px;
+}
+
+.site-name {
+    padding: 10px 10px;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    /*app {
+        flex-direction: row;
+    }*/
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.nav-menu li.nav-item {
+    float: left;
+}
+
+    .nav-menu li.nav-item a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .nav-menu li.nav-item a:hover:not(.active) {
+            background-color: #555;
+        }
+
+.nav-menu .active {
+    background-color: #4CAF50;
+}
+
+.area-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4CAF50;
+}
+
+.area-menu li.nav-item {
+    float: left;
+}
+
+    .area-menu li.nav-item a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .area-menu li.nav-item a:hover:not(.active) {
+            background-color: #555;
+        }
+
+.area-menu .active {
+    background-color: #1b13ca;
+}

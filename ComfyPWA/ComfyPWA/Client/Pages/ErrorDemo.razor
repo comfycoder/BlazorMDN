@@ -1,0 +1,49 @@
+﻿@page "/errordemo"
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Component Errors" Author="Dennis Moon" RobotsFollow="true"
+          Keywords="blazor, pwa, component, errors"
+          Description="Learn how to handle errors in a Blazor component">
+</PageMeta>
+
+<h1>Weather forecast (with error)</h1>
+
+<p>This component demonstrates handling an error when attempting to fetch data from the server.</p>
+
+@if (forecasts != null && forecasts.Length > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (loadFailed)
+{
+    <div class="alert alert-danger" role="alert">
+        Sorry, we could not load weather forcasts due to an error.
+    </div>
+}
+else
+{
+    <h1>Loading...</h1>
+}
+
+<div>
+    <button type="button" class="btn btn-danger" @onclick="LogCriticalError">Log Critical Error</button>
+</div>

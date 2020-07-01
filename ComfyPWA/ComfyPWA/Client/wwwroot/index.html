@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="msapplication-TileColor" content="#03173d">
+    <meta name="theme-color" content="#03173d">
+    <title>Comfy PWA</title>
+    <base href="/" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link href="css/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/app.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <app>
+        <div class="splash-screen">
+            <div class="loading-indicator">
+                <div id="loader">
+                    <img src="icon-512.png" width="260" alt="Comfy Coder logo" />
+                </div>
+                <div id="loading-message">Loading...</div>
+            </div>
+        </div>
+    </app>
+
+    <div id="blazor-error-ui">
+        <p>
+            Please click <a href="" class="reload" style="color: dodgerblue;">HERE</a> to refresh the page.<br />
+            <span style="font-size: 0.7em;">If this issue persists please contact support, thank you!</span>
+        </p>
+        <a class="dismiss" style="color: white;">🗙</a>
+    </div>
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="_content/ComfyPWA.BrowserLibrary/browserInterop.js"></script>
+</body>
+
+</html>

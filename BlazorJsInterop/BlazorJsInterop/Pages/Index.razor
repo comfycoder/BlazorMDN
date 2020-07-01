@@ -1,0 +1,23 @@
+﻿@page "/"
+
+<PageMetadata 
+    ApplicationName="Blazor JsInterop" PageTitle="Home" Author="Dennis Moon" RobotsFollow="true"
+    Keywords="blazor, web, app, javascript, interop, browser, dialogs, seo"
+    Description="See how to interact with browser native dialog using Blazor JavaScript Interop">
+</PageMetadata>
+
+<h1>Hello JavaScript Interop!</h1>
+
+<p>Welcome to your new app.</p>
+
+<div>
+    <button class="btn btn-primary mr-2 mb-2" @onclick="ShowAlert">Show Browser Alert Dialog</button>
+</div>
+
+<div>
+    <button class="btn btn-primary mr-2 mb-2" @onclick="ShowPrompt">Show Browser Prompt Dialog</button> @promptResult
+</div>
+
+<div>
+    <button class="btn btn-primary mr-2 mb-2" @onclick="ShowConfirm">Show Browser Confirm Dialog</button> @confirmResult
+</div>

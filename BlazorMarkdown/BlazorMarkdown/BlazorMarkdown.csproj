@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\default.css" />
+    <Content Remove="wwwroot\css\tomorrow-night-bright.css" />
+    <Content Remove="wwwroot\js\highlight.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\highlight\default.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.3.8" />
+  </ItemGroup>
+
+</Project>

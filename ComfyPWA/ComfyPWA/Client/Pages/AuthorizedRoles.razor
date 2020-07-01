@@ -1,0 +1,30 @@
+﻿@page "/authorizedroles"
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Authorized Roles" Author="Dennis Moon" RobotsFollow="true"
+          Keywords="blazor, pwa, authentication, authorization, authenticate, authorize"
+          Description="Learn how to access your authentication and authorization status in a Blazor component">
+</PageMeta>
+
+<h1>Authorization Status By Role(s)</h1>
+
+<AuthorizeView Roles="User">
+    <p>You can only see this if you're in the User role.</p>
+</AuthorizeView>
+
+<AuthorizeView Roles="Admin">
+    <p>You can only see this if you're in the Admin role.</p>
+</AuthorizeView>
+
+<AuthorizeView Roles="Admin, User">
+    <p>You can only see this if you're in the Admin or User role.</p>
+</AuthorizeView>
+
+@if (!string.IsNullOrWhiteSpace(userRoles))
+{
+    <p>User Role(s): @userRoles </p>
+}
+
+@if (!string.IsNullOrWhiteSpace(authStatus))
+{
+    <p>Auth: @authStatus </p>
+}

@@ -1,0 +1,68 @@
+﻿@page "/"
+
+<PageMeta ApplicationName="Comfy PWA" PageTitle="Home" Author="Dennis Moon" RobotsFollow="true"
+          Keywords="blazor, pwa, progressive, web, app, seo, learn"
+          Description="Learn how to build a Blazor WebAssembly PWA Application">
+</PageMeta>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="text-black">Let's Get Comfy With Blazor PWA</h1>
+        <div class="row">
+            <div class="jumbotron-image">
+                <img class="img-fluid" src="images/BlazorRocket.png" alt="Blazor Rocket" />
+            </div>
+        </div>
+        <h3>Blazor</h3>
+        <p class="lead text-black">
+            Blazor lets you build interactive web UIs using C# instead of JavaScript.
+            Blazor apps are composed of reusable web UI components implemented using C#, HTML, and CSS.
+            Both client and server code is written in C#, allowing you to share code and libraries.
+        </p>
+        <h3>PWA (Progressive Web App)</h3>
+        <p class="lead text-black">
+            The hardest problem with software is distribution. App developers often spend more on distribution than they earn back.
+            This problem is solved by the web platform, however web apps have historically been less capable than native apps.
+            With the advent of PWA’s (Progressive Web Applications), web apps have become just as capable as native, supporting features such as push notifications
+            and Add to Home Screen, without giving up the reach of the web.
+        </p>
+        @*<p>
+                <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" class="btn btn-primary my-2" target="_blank" rel="noopener">Blazor</a>
+                <a href="https://web.dev/progressive-web-apps/" class="btn btn-secondary my-2" target="_blank" rel="noopener">PWA</a>
+            </p>*@
+    </div>
+</section>
+
+<div class="spacer-15"></div>
+
+<div class="album py-5">
+    <div class="container">
+        <div class="row">
+            <ContentCard ImageSrc="images/authenticate-authorize.jpg" ImageAlt="Authenticate Authorize" TargetUrl="/authorizedroles"
+                         Title="Access your authentication and authorization status" />
+
+            <ContentCard ImageSrc="images/claims.jpg" ImageAlt="Claims" TargetUrl="/claims"
+                         Title="Access your security claims" />
+
+            <ContentCard ImageSrc="images/counter.jpg" ImageAlt="Counter" TargetUrl="/counter"
+                         Title="Change component values and persist state between sessions" />
+
+            <ContentCard ImageSrc="images/secure-access.jpg" ImageAlt="Secure Access" TargetUrl="/fetchdata"
+                         Title="Secure access to a page" />
+
+            <ContentCard ImageSrc="images/error.jpg" ImageAlt="Error" TargetUrl="/errordemo"
+                         Title="Handle errors in a Blazor component" />
+
+            <ContentCard ImageSrc="images/resources.jpg" ImageAlt="Resources" TargetUrl="/resources"
+                         Title="Blazor Resources" />
+        </div>
+    </div>
+</div>
+
+<div class="row back-to-top">
+    <div class="col">
+        <span class="float-right">
+            <a href="#">Back to top</a>
+        </span>
+    </div>
+</div>
