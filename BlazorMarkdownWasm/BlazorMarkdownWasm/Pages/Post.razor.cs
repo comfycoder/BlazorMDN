@@ -22,7 +22,9 @@ namespace BlazorMarkdownWasm.Pages
 
         protected async override Task OnInitializedAsync()
         {
-            var response = await Http.GetStringAsync("posts/markdown-monster/markdown-monster.md");
+            // var response = await Http.GetStringAsync("posts/markdown-monster/markdown-monster.md");
+
+            var response = await Http.GetStringAsync("https://saccblazorstorage.blob.core.windows.net/markdown/blazor-resources/blazor-resources.md");
 
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
 
